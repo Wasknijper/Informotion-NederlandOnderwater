@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Prototype</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/style.css">
+<link href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
+
+<!-- fonts -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+
+</head>
+	<body>
+
+		<section class="intro_container">
+			<section class="intro">
+				<h1>Overstromingen in <span>Nederland</span></h1>
+				<section class="text-border">
+					<p>Als Nederland getroffen wordt
+					door een grote overstroming 
+					komt 60% van Nederland 
+					onder water te staan.</p>
+
+					<p>Wil je weten hoe je straat
+					eruit ziet als het onder water
+					staat? Vul je postcode in en
+					neem een kijkje</p>
+				</section>
+					
+				<span class="postalcode">
+					<input class="postalcode_text" rows="1" col="1"placeholder="Bijv. 0000 AA"></input>
+					<button class="postalcode_btn"><i class="fa fa-angle-double-right"></i></button>
+				</span>
+
+			</section>
+		</section>
+
+		<div class="buttons">
+	    	<button class="zoom-in"><i class="fa fa-plus"></i></button>
+	    	<button class="zoom-out"><i class="fa fa-minus"></i></button>
+	    	<button class="reset">Reset</button>
+	  	</div>
+		<div id="map">
+			<div id="streetview">
+				<i class="fa fa-map-marker"></i>
+				<div id="closeup">
+					<figure class="cd-image-container">
+						<img src="img/3445xk-droog.jpg" alt="Original Image">
+
+						<div class="cd-resize-img">
+							<img src="img/3445xk.jpg" alt="Modified Image">
+							<span class="cd-image-label" data-type="original">1 Meter water</span>
+						</div>
+						
+						<span class="cd-handle"></span>
+					</figure>
+				</div>
+			</div>
+			<div class="zoom">
+				<svg></svg>
+				<img src="img/0.png" id="overlay"/>			
+				<img src="img/satalite.png" id="overlay_sat"/>
+			</div>
+		</div>
+
+	  	<div id="slider">
+	  		<p>Slide om de gebieden te zien die overstromen.</p>
+			<input id="slide" type="range" min="0" value="0" max="5" step="1" list="volsettings" onchange="updateSlider(this.value)" />
+				<p class="slider_output"><output id="rangeValue">0</output><span></span><p>
+				<datalist id="volsettings">
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+			</datalist>
+			<p class="legenda">Maximale waterdiepte in meters.</p>
+		</div>
+
+		<div id="extraInfo">
+			<h1></h1>
+			<p class="aantalInwoners">Aantal inwoners: <span></span></p>
+			<p class="natteVoeten">Aantal natte voeten: <span></span></p>
+		</div>
+
+		<script src="js/jquery-2.1.1.js"></script>
+		<script src="js/compare.js"></script>
+		<script src="js/panzoom.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	    <script src="js/nederland.js" type="text/javascript"></script>
+		<script src="js/slider.js" type="text/javascript"></script>
+	    <script src="js/map.js" type="text/javascript"></script>
+	    <script src="js/zoom.js" type="text/javascript"></script>
+    </body>
+</html>
